@@ -1,0 +1,16 @@
+<h2> USER STORY</h2>
+<!-- title:string,description:string,creator:string -->
+<div *ngIf="newUserStory" >
+    <p>
+        <input type="text" placeholder="Title" [(ngModel)]="newUserStory.title" >
+    </p>
+    <p>
+        <input type="text" placeholder="Description" [(ngModel)]="newUserStory.description" >
+    </p>
+    <p>
+
+        <input type="text" placeholder="Creator" [(ngModel)]="newUserStory.creator" >
+    </p>
+    <button (click)="addUserStory()">ADD</button>
+    <button (click)="removeStory()">REMOVE</button>
+</div>

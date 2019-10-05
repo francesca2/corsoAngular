@@ -1,0 +1,15 @@
+<h2>Sprint Panel</h2>
+<h3>{{sprintData.title}}</h3>
+<p *ngIf="sprintData">Sprint inizializzato</p>
+<ul>
+    <li *ngFor='let story of sprintData.userStories'>
+        {{story.title}} - {{story.description}} &nbsp; 
+        <button (click)="removeStory(story)">DEL</button>
+    </li>
+</ul>
+<hr>
+
+<!-- Utilizzando l'event emitter -->
+<!-- <app-add-user-story (sendUserStory)="addUserStory($event)"></app-add-user-story> -->
+
+<app-add-user-story (sendUserStory)="addUserStory($event)"></app-add-user-story>

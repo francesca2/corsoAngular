@@ -1,12 +1,15 @@
-<h2>Sprint Panel</h2>
-<h3>{{sprintData.title}}</h3>
-<p *ngIf="sprintData">Sprint inizializzato</p>
-<ul>
-    <li *ngFor='let story of sprintData.userStories'>
-        {{story.title}} - {{story.description}} &nbsp; 
-        <button (click)="removeStory(story)">DEL</button>
-    </li>
-</ul>
+<div *ngIf="!sprintData">spinner</div>
+<div *ngIf="sprintData">
+    <h2>Sprint Panel</h2>
+    <h3>{{sprint.title}}</h3>
+    <p >Sprint inizializzato</p>
+    <ul>
+        <li *ngFor='let story of sprint.userStories'>
+            {{story.title}} - {{story.description}} &nbsp; 
+            <button (click)="removeStory(story)">DEL</button>
+        </li>
+    </ul>
+</div> 
 <hr>
 
 <!-- Utilizzando l'event emitter -->

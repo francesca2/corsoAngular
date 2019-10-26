@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { SprintData } from '../sprint-data';
-import { UserStory } from '../user-story';
-import { SprintServiceService } from '../sprint-service.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { SprintData } from '../_model/sprint-data';
+import { UserStory } from '../_model/user-story';
+import { SprintServiceService } from '../_service/sprint-service.service';
 
 @Component({
   selector: 'app-sprint-panel',
@@ -9,12 +9,11 @@ import { SprintServiceService } from '../sprint-service.service';
   styleUrls: ['./sprint-panel.component.scss']
 })
 export class SprintPanelComponent implements OnInit {
-  public sprintData:SprintData;
+  @Input() sprint:SprintData;
   private sprintService: SprintServiceService;
   
   constructor(sprintService:SprintServiceService) { 
     this.sprintService = sprintService;
-    this.sprintData = sprintService.getSprintData();//new SprintData();
   }
 
 
